@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;500&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-blue-500: #6f9cf4;
+  --color-blue-200: #B5CCF9;
+
+  --color-black: 240, 18%, 9%;
+  --color-black-500: hsl(240, 18%, 9%);
+  --color-black-400: hsl(var(--color-black-400) / .7);
+
+  --color-white: #FFFFFF;
+  --color-red: #F56565;
+  --color-green: #48BB78;
+  --color-yellow: #ECC94B;
+
+  --font-primary: 'Exo', sans-serif;
+  --font-secondary: 'Orbitron';
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-black-500);
+  background:  linear-gradient(to top, rgba(18, 18, 26, 0.9) rgba(18, 18, 26, 0.9)), url("https://cdn.discordapp.com/attachments/910648406362447873/919588444303421490/unknown.png") no-repeat fixed center;
+  background-size: cover;
+  color: var(--color-blue-200);
+  font-family: var(--font-primary);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  // font-family: var(--font-secondary);
+}
