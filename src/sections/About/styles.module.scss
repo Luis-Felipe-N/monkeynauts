@@ -12,6 +12,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        gap: 2rem;
 
         > div {
             max-width: 500px;
@@ -42,5 +43,15 @@
 
     a {
         @include button;
+    }
+}
+
+@media (max-width: 750px) {
+    
+    .about {
+
+        &__content {
+            flex-direction: column;
+        }
     }
 }

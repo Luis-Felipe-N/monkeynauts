@@ -17,14 +17,9 @@ export function Header() {
 
             if ( headerRef && scroll < 200 ) {
                 headerRef.current.removeAttribute('data-header')
+                return
             }
         }
-        // if ( scroll >= 200) {
-        //     console.log('Header with style')
-        // } else {
-
-        // }
-        // console.log('Current scrool is: ' + window.scrollY)
     }
 
     useEffect(() => {
@@ -46,7 +41,7 @@ export function Header() {
                     <li><a href="#" className={styles.active}>Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#">Game</a></li>
-                    <li><a href="#">Play</a></li>
+                    <li><a href="#">Footage</a></li>
                     <li><a href="#">Tokenomics</a></li>
                     <li><a href="#">Core Team</a></li>
                 </ul>
