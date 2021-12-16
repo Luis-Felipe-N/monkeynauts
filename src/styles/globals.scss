@@ -43,7 +43,7 @@ html {
 body {
   min-height: 100vh;
   background-color: var(--color-black-500);
-  // background:  linear-gradient(to top, rgba(18, 18, 26, 0.9) rgba(18, 18, 26, 0.9)), url("https://cdn.discordapp.com/attachments/910648406362447873/919588444303421490/unknown.png") no-repeat fixed center;
+  background: linear-gradient(to top, rgba(18, 18, 26, 0.9), rgba(18, 18, 26, 0.9)), url("https://cdn.discordapp.com/attachments/910648406362447873/919588444303421490/unknown.png") no-repeat fixed center;
   background-size: cover;
   color: var(--color-blue-200);
   font-family: var(--font-primary);

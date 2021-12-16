@@ -4,7 +4,7 @@ import {RiErrorWarningLine} from 'react-icons/ri'
 
 export function Game() {
     return (
-        <section className={styles.game}>
+        <section id="game" className={styles.game}>
             <Title title="game"/>
             <div className={styles.container}>
                 <div className={styles.game__modes}>

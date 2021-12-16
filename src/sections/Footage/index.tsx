@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Title } from "../../components/Title";
 import styles from './styles.module.scss'
 import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
-// import { url } from "inspector";
-// import { URL } from "url";
+import {RiErrorWarningLine} from 'react-icons/ri'
 
 interface IImage {
     url: string;
@@ -42,33 +41,33 @@ const imgs: IImage[] = [
 
 export function Footage() {
     const countSlider = imgs.length
-    const [active, setActive] = useState(0)
+    const [currentSliderActive, setCurrentSliderActive] = useState(0)
     const containerSliderRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         if ( containerSliderRef.current ) {
-            containerSliderRef.current.style.transform = `translateX(-${active * 100}%)`
+            containerSliderRef.current.style.transform = `translateX(-${currentSliderActive * 100}%)`
         }
-    }, [active])
+    }, [currentSliderActive])
 
     function handleNextSlider() {
-        if (active < (countSlider - 1)) {
-            setActive(active + 1)   
+        if (currentSliderActive < (countSlider - 1)) {
+            setCurrentSliderActive(currentSliderActive + 1)   
         }
     }
 
     function handleBackSlider() {
-        if (active > 0) {
-            setActive(active - 1)
+        if (currentSliderActive > 0) {
+            setCurrentSliderActive(currentSliderActive - 1)
         }
     }
 
     function handleMoveSliderByLabels(index: number) {
-        setActive(index)
+        setCurrentSliderActive(index)
     }
 
     return (
-        <section className={styles.footage}>
+        <section id="footage" className={styles.footage}>
             <Title title="In Game Footage" />
             <div className={styles.slider}>
                 <button
@@ -97,14 +96,22 @@ export function Footage() {
                 <ul className={styles.slider__labels} role="navigation">
                     {imgs.map((img, index) => (
                         <li key={index}>
-                            <button onClick={() => handleMoveSliderByLabels(index)} aria-label={``}>
+                            <button 
+                                onClick={() => handleMoveSliderByLabels(index)} 
+                                className={index === currentSliderActive ? styles.active : ''}
+                                aria-current={currentSliderActive === index}
+                                aria-label={currentSliderActive === index ? `Current item, item ${index + 1} of carrossel` : `Item ${index + 1} of carrossel`}
+                            >
 
                             </button>
                         </li>
                     ))}
                 </ul>
             </div>
-            <p className={styles.footage__message}>These images do not necessarily represent the final product.</p>
+            <p className={styles.footage__message}>
+                <RiErrorWarningLine size={25}/>
+                These images do not necessarily represent the final product.
+            </p>
         </section>
     )
 }
