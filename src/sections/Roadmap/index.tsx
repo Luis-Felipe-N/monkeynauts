@@ -12,7 +12,7 @@ export function Roadmap() {
                         <div>
                             <h3>q4/20</h3>
                             <span
-                                tabindex={0}
+                                
                                 className={`${styles.circle} ${styles.complete}`}
                             >
                                 <BiCheck size={30} />
@@ -24,7 +24,7 @@ export function Roadmap() {
                         <div>
                             <h3>q1/21</h3>
                             <span
-                                tabindex={0}
+                                
                                 className={styles.circle}
                             ></span>
                             <p>
@@ -34,7 +34,7 @@ export function Roadmap() {
                         <div>
                             <h3>q2/21</h3>
                             <span
-                                tabindex={0}
+                                
                                 className={styles.circle}
                             ></span>
                             <p>
